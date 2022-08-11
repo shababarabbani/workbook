@@ -1,0 +1,49 @@
+<h6>Dashboard</h6>
+<h3>Welcome {{name}}</h3>
+<p>Your interviews</p>
+
+{{#if experiences}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Company</th>
+                <th>Job Role</th>
+                <th>Job Type</th>
+                <th>Year</th>
+                <th>Published</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each experiences}}
+                <tr>
+                    <td><a href="/experiences/{{_id}}">{{title}}</a></td>
+                    <td>{{company}}</td>
+                    <td>{{jobRole}}</td>
+                    <td>{{jobType}}</td>
+                    <td>{{year}}</td>
+                    <td>{{formatDate createdAt 'Do MMM YYYY'}}</td>
+                    <td><span class="dash-status">{{status}}</span></td>
+                    <td>
+                        <a href="/experiences/edit/{{_id}}" class="btn btn-float green darken-3">
+                            <i class="fas fa-edit blue green darken-3"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <form action="/experiences/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn red darken-3">
+                                <i class="fas fa-trash-can"></i>
+                            </button>
+                        </form>
+                    </td>
+                        
+                    
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You have not published any interview</p>
+{{/if}}

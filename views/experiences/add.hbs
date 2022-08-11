@@ -1,0 +1,66 @@
+<h3>Share your experience</h3>
+<div class="row">
+    <form action="/experiences" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="company" name="company">
+                <label for="company">Company</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="jobRole" name="jobRole">
+                <label for="jobRole">Job Role</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select name="jobType" id="jobType">
+                    <option value="Full Time" selected>Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Internship">Internship</option>
+                </select>
+                <label for="jobType">Job Type</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="year" name="year">
+                <label for="year">Year</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select name="status" id="status">
+                    <option value="Public" selected>Public</option>
+                    <option value="Private">Private</option>
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field">
+                <h6>How did the interview go?</h6>
+                <textarea name="body" id="body"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="save" class="btn">
+            <a href="/dashboard" class="btn-orange">Cancel</a>
+        </div>
+        
+    </form>
+</div>

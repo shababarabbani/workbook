@@ -1,0 +1,27 @@
+<h4>Interview Corner</h1>
+<div class="row">
+    {{#each experiences}}
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    {{{editIcon user ../user _id true}}}
+                </div>
+                <div class="card-content center-align">
+                    <h5>{{title}}</h5>
+                    <h6>{{company}}</h6>
+                    <p>{{stripTags (truncate body 150)}}</p>
+                    <br>
+                    <div class="chip">
+                        <img src="{{user.image}}" alt="">
+                        <a href="/experiences/user/{{user._id}}">{{user.displayName}}</a>
+                    </div>
+                </div>
+                <div class="card-action center-align">
+                    <a href="/experiences/{{_id}}" class="btn #546e7a blue-grey darken-1">Read More</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <p>No interviews to display</p>
+    {{/each}}
+</div>
